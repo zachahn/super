@@ -2,7 +2,7 @@
   <div class="super-field-group">
 <% end %>
   <% if !local_assigns[:hide_label] %>
-    <%= form.label(column, class: "block") %>
+    <%= form.super.label(column) %>
   <% end %>
   <div class="<%= Super::ViewHelper.classes(["mt-1", !local_assigns[:hide_label]]) %>">
     <%= form.public_send(
@@ -11,7 +11,7 @@
       class: "super-input w-full"
     ) %>
     <% if !local_assigns[:hide_form_inline_errors] %>
-      <%= render "form_inline_errors", form: form, column: column %>
+      <%= form.super.inline_errors(column) %>
     <% end %>
   </div>
 <% if !local_assigns[:ungrouped] %>

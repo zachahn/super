@@ -8,7 +8,7 @@
         <%= form.label(column, class: "select-none") %>
       <% end %>
     </div>
-    <%= render "form_inline_errors", form: form, column: column %>
+    <%= form.super.inline_errors(column) %>
   </div>
 <% if !local_assigns[:ungrouped] %>
   </div>

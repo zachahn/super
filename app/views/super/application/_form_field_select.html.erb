@@ -2,7 +2,7 @@
   <div class="super-field-group">
 <% end %>
   <% if !local_assigns[:hide_label] %>
-    <%= form.label(column, class: "block") %>
+    <%= form.super.label(column) %>
   <% end %>
   <div class="<%= Super::ViewHelper.classes("super-input-select", ["mt-1", !local_assigns[:hide_label]]) %>">
     <%= form.select(
@@ -17,7 +17,7 @@
       </span>
     </div>
   </div>
-  <%= render "form_inline_errors", form: form, column: column %>
+  <%= form.super.inline_errors(column) %>
 <% if !local_assigns[:ungrouped] %>
   </div>
 <% end %>

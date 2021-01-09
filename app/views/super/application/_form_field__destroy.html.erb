@@ -3,7 +3,7 @@
 <% end %>
   <%= form.check_box(column, data: { action: "toggle-pending-destruction#call" }) %>
   <%= form.label(column) %>
-  <%= render "form_inline_errors", form: form, column: column %>
+  <%= form.super.inline_errors(column) %>
 <% if !local_assigns[:ungrouped] %>
   </div>
 <% end %>
