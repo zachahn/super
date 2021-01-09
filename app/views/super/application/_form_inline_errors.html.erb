@@ -1,5 +1,5 @@
 <% if form.object %>
-  <% Super::ViewHelper.errors_accounting_for_reflections(form.object, column).each do |error_message| %>
+  <% Super::Form::InlineErrors.error_messages(form.object, column).each do |error_message| %>
     <p class="text-red-400 text-xs italic pt-1"><%= error_message %></p>
   <% end %>
 <% else %>
